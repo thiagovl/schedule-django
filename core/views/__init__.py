@@ -1,1 +1,1 @@
-from .views_index import  index
+from .views_index import  *
