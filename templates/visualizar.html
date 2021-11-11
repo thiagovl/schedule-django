@@ -3,32 +3,40 @@
 
 {% block content %}
 {% for ev in evento %}
-<div class="evento-card">
-    <article class="card fl-left">
-        <section class="date">
-            <time datetime="23th feb">
-                <span>{{ ev.get_data }}</span><span>{{ ev.get_mes }}</span>
-            </time>
-        </section>
-        <section class="card-cont">
-            <small>Criado por: {{ ev.usuario }}</small>
-            <h3>{{ ev.titulo }}</h3>
-            <div class="even-date">
-                <i class="fa fa-calendar"></i>
-                <time>
-                    <span>Data de criação: {{ ev.get_data_criacao }}</span>
-                    
+<div>
+    
+    <div class="evento-card">
+        <article class="card fl-left">
+            <section class="date">
+                <time datetime="23th feb">
+                    <span>{{ ev.get_data }}</span><span>{{ ev.get_mes }}</span>
                 </time>
-            </div>
-            <div class="even-info">
-                <i class="fa fa-map-marker"></i>
-                <p>
-                    {{ ev.descricao }}
-                </p>
-                <span>Horário: {{ ev.get_data_evento_hora }}</span>
-            </div>
-        </section>
-    </article>
+            </section>
+            <section class="card-cont">
+                <small>Criado por: {{ ev.usuario }}</small>
+                <h3>{{ ev.titulo }}</h3>
+                <div class="even-date">
+                    <i class="fa fa-calendar"></i>
+                    <time>
+                        <span>Data de criação: {{ ev.get_data_criacao }}</span>
+
+                    </time>
+                </div>
+                <div class="even-info">
+                    <i class="fa fa-map-marker"></i>
+                    <p>
+                        Descrição Evento: {{ ev.descricao }}
+                    </p>
+                    <span>Horário: {{ ev.get_data_evento_hora }}</span>
+                </div>
+            </section>
+        </article>
+        <div style="margin-top: 30px;">
+            <a href="/home/">
+                <button type="button" class="btn btn-primary">Retornar Home</button>
+            </a>
+        </div>
+    </div>
 </div>
 {% endfor %}
 {% endblock %}

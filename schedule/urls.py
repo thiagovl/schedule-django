@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import views_index
+from core.views import view_index, view_home, view_signup, view_crud
 from django.views.generic import RedirectView
 
 from django.conf import settings # Necessario para configurar MEDIA_URL
@@ -23,10 +23,13 @@ from django.conf.urls.static import static # Necessario para configurar MEDIA_UR
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', views_index.index),
-    path('home/', views_index.home),
-    path('logout/', views_index.logout_user),
-    path('index/submit', views_index.login_submit),
-    path('evento/<id>', views_index.visualizar),
+    path('index/', view_index.index),
+    path('home/', view_home.home),
+    path('logout/', view_signup.logout_user),
+    path('index/login', view_signup.login_user),
+    path('evento/<id>', view_crud.visualizar),
+    path('evento/adicionar/', view_home.adicionar),
+    path('evento/editar/', view_crud.editar),
+    path('salvar', view_crud.salvar_ediar),
     path('', RedirectView.as_view(url='/home/')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

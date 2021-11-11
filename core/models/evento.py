@@ -32,11 +32,19 @@ class Evento(models.Model):
         hs = self.data_criacao - datetime.timedelta(hours=3)
         return hs.strftime("%d/%m/%Y %H:%M")
 
-    def get_data(sef):
-        return sef.data_evento.strftime('%d')
+    def get_data(self):
+        return self.data_evento.strftime('%d')
+    
+    def get_data_evento_input(self):
+        return self.data_evento.strftime('%Y-%m-%d')
 
-    def get_mes(sef):
-        return sef.data_evento.strftime('%b')
+    def get_data_evento_input_hora(self):
+        hs = self.data_evento - datetime.timedelta(hours=3)
+        return hs.strftime("%H:%M")
+
+
+    def get_mes(self):
+        return self.data_evento.strftime('%b')
 
     def get_data_evento_hora(self):
         hs = self.data_evento - datetime.timedelta(hours=3)
