@@ -32,4 +32,4 @@ urlpatterns = [
     path('evento/editar/', view_crud.editar),
     path('salvar', view_crud.salvar_ediar),
     path('', RedirectView.as_view(url='/home/')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
