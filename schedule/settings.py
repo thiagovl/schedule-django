@@ -85,13 +85,26 @@ WSGI_APPLICATION = 'schedule.wsgi.application'
 #     }
 # }
 
+# Database Local
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'schedule',
+#         'USER': 'postgres',
+#         'PASSWORD': '123',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
+# Database Heroku
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'schedule',
-        'USER': 'postgres',
-        'PASSWORD': '123',
-        'HOST': 'localhost',
+        'NAME': 'd9trrspdphqc2a',
+        'USER': 'gjzmxfbvmmlvlz',
+        'PASSWORD': '22148a2538bfcab2479a13ecdca56dd515479e6272c67d6e31fc4d1b7ec70130',
+        'HOST': 'ec2-54-160-35-196.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -135,7 +148,7 @@ USE_TZ = True
 
 # Files Static - Arquivos estaticos EX.: CSS, JavaScript, Imagens
 STATIC_URL = '/static/'
-os.path.join(BASE_DIR, 'staticfile')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfile')
 
 # Files Media Upload - Carregamento de arquivos estaticos EX.: CSS, JavaScript, Imagens
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
