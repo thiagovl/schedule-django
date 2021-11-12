@@ -6,7 +6,7 @@
 <div class="container-fluid" align="center">
     <div class="adicionar col-5">
         <h3>Cadastro de Evento</h3>
-        <form action="/salvar" method="POST">{% csrf_token %}
+        <form action="/salve" method="POST">{% csrf_token %}
             <input type="number" name="id_evento" value="{{ evento.id }}" hidden>
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">Título</span>

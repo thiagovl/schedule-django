@@ -1,0 +1,37 @@
+{% extends "model-page.html" %}
+{% load static%}
+
+{% block content %}
+<div class="container" style="margin-top:80px;">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+        <h3>Cadastro de Evento</h3>
+        <form action="/index/registrar" method="POST">{% csrf_token %}
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Nome</span>
+                <input type="text" class="form-control" placeholder="Digite um login" aria-label="Nome"
+                    aria-describedby="basic-addon1" name="nome">
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">@</span>
+                <input type="email" class="form-control" placeholder="Digite o e-mail" aria-label="email"
+                    aria-describedby="basic-addon1" name="email">
+            </div>
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Senha</span>
+                <input type="password" class="form-control" placeholder="Digite a senha" aria-label="password"
+                    aria-describedby="basic-addon1" name="password">
+            </div>
+            <div>
+                <button type="submit" class="btn btn-primary" style="width: 100px;">Salvar</button>
+                <a href="/">
+                    <button type="button" class="btn btn-secondary" style="width: 100px;">Cancelar</button>
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+{% endblock %}
