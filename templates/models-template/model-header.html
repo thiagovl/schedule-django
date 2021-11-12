@@ -1,3 +1,5 @@
+{% load static %}
+
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +12,7 @@
         <div>
         <!-- {% if usuario != None %} -->
             <div class="dropdown">
-                <img src="{{ MEDIA_URL }}image/avatar.png" alt="Avatar" class="avatar"> 
+                <img src="{% static 'image/avatar.png' %}" alt="Avatar" class="avatar"> 
                 <button class="btn btn-secondary dropdown-toggle dropdownLogin" type="button" data-bs-toggle="dropdown">
                     {{ usuario }}
                 </button>
